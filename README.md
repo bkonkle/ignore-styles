@@ -18,6 +18,11 @@ To resolve this, use `ignore-styles` as a compiler:
 
     mocha --compilers css:ignore-styles
 
+This should work for more than just the "css" extension, because `ignore-styles`
+automatically registers itself for a number of extensions (see
+[DEFAULT_EXTENSIONS][default-extensions] for the full list, and send a pull
+request if you need more).
+
 Enjoy!
 
 [travis-svg]: https://img.shields.io/travis/bkonkle/ignore-styles/master.svg?style=flat-square
@@ -28,3 +33,4 @@ Enjoy!
 [downloads-url]: http://npm-stat.com/charts.html?package=ignore-styles
 [version-svg]: https://img.shields.io/npm/v/ignore-styles.svg?style=flat-square
 [package-url]: https://npmjs.org/package/ignore-styles
+[default-extensions]: https://github.com/bkonkle/ignore-styles/blob/master/ignore-styles.js#L1
