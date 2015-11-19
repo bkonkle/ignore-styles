@@ -25,20 +25,28 @@ request if you need more).
 
 You can also use it just like `babel/register`:
 
+```javascript
     import 'ignore-styles'
+```
 
 Or in ES5:
 
+```javascript
     require('ignore-styles')
+```
 
 To customize the extensions used:
 
+```javascript
     import register from 'ignore-styles'
     register(['.sass', '.scss'])
+```
 
 To customize the extensions in ES5:
 
+```javascript
     require('ignore-styles')(['.sass', '.scss'])
+```
 
 Enjoy!
 
