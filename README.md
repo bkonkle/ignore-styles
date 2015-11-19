@@ -23,6 +23,23 @@ automatically registers itself for a number of extensions (see
 [DEFAULT_EXTENSIONS][default-extensions] for the full list, and send a pull
 request if you need more).
 
+You can also use it just like `babel/register`:
+
+    import 'ignore-styles'
+
+Or in ES5:
+
+    require('ignore-styles')
+
+To customize the extensions used:
+
+    import register from 'ignore-styles'
+    register(['.sass', '.scss'])
+
+To customize the extensions in ES5:
+
+    require('ignore-styles')(['.sass', '.scss'])
+
 Enjoy!
 
 [travis-svg]: https://img.shields.io/travis/bkonkle/ignore-styles/master.svg?style=flat-square
