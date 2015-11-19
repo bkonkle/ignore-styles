@@ -2,6 +2,7 @@
   "name": "ignore-styles",
   "version": "1.0.1",
   "description": "Ignore imported style files when running in Node",
+  "main": "lib/ignore-styles.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register",
     "build": "babel ignore-styles.js -s -o lib/ignore-styles.js",
