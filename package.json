@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Ignore imported style files when running in Node",
   "scripts": {
-    "test": "istanbul cover _mocha -- --compilers js:babel-register --reporter nyan"
+    "test": "mocha --compilers js:babel-register",
+    "build": "babel ignore-styles.js -s -o lib/ignore-styles.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,6 @@
     "chai": "^3.4.1",
     "eslint": "^1.9.0",
     "eslint-config-ecliptic": "^1.2.1",
-    "istanbul": "^0.4.0",
     "mocha": "^2.3.3"
   }
 }
