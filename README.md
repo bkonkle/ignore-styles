@@ -19,9 +19,15 @@ To resolve this, use `ignore-styles` as a compiler:
     mocha --compilers css:ignore-styles
 
 This should work for more than just the "css" extension, because `ignore-styles`
-automatically registers itself for a number of extensions (see
+automatically registers itself for a number of extensions. See
 [DEFAULT_EXTENSIONS][default-extensions] for the full list, and send a pull
-request if you need more).
+request if you need more.
+
+## More Examples
+
+To use this with multiple Mocha compilers:
+
+    mocha --compilers js:babel-register,css:ignore-styles
 
 You can also use it just like `babel/register`:
 
@@ -29,7 +35,7 @@ You can also use it just like `babel/register`:
     import 'ignore-styles'
 ```
 
-Or in ES5:
+In ES5:
 
 ```javascript
     require('ignore-styles')
