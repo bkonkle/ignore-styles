@@ -1,6 +1,6 @@
 {
   "name": "ignore-styles",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Ignore imported style files when running in Node",
   "main": "lib/ignore-styles.js",
   "scripts": {
@@ -15,7 +15,11 @@
   },
   "author": "Brandon Konkle <brandon@konkle.us>",
   "license": "MIT",
-  "keywords": ["webpack", "css", "testing"],
+  "keywords": [
+    "webpack",
+    "css",
+    "testing"
+  ],
   "devDependencies": {
     "babel-cli": "^6.2.0",
     "babel-eslint": "^4.1.5",
