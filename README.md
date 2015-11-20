@@ -14,20 +14,18 @@ example) you'll see errors like this:
     3 |   font-size: 10em
     4 |
 
-To resolve this, use `ignore-styles` as a compiler:
+To resolve this, require `ignore-styles` with your mocha tests:
 
-    mocha --compilers css:ignore-styles
+    mocha --require ignore-styles
 
-This should work for more than just the "css" extension, because `ignore-styles`
-automatically registers itself for a number of extensions. See
-[DEFAULT_EXTENSIONS][default-extensions] for the full list, and send a pull
-request if you need more.
+See [DEFAULT_EXTENSIONS][default-extensions] for the full list of extensions
+ignored, and send a pull request if you need more.
 
 ## More Examples
 
-To use this with multiple Mocha compilers:
+To use this with multiple Mocha requires:
 
-    mocha --compilers js:babel-register,css:ignore-styles
+    mocha --require babel-register --require ignore-styles
 
 You can also use it just like `babel/register`:
 
