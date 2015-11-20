@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register",
     "build": "babel ignore-styles.js -s -o lib/ignore-styles.js",
+    "watch": "babel ignore-styles.js -s -o lib/ignore-styles.js -w",
     "prepublish": "npm run build"
   },
   "repository": {
