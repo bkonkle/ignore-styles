@@ -3,6 +3,7 @@ export const DEFAULT_EXTENSIONS = [
   '.scss',
   '.sass',
   '.stylus',
+  '.styl',
   '.less',
 ]
 
