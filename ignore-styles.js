@@ -23,12 +23,12 @@ export function restore() {
   oldHandlers = {}
 }
 
-export default function register(extensions = DEFAULT_EXTENSIONS) {
+export default function register(extensions = DEFAULT_EXTENSIONS, handler = noOp) {
   restore()
 
   for (const ext of extensions) {
     oldHandlers[ext] = require.extensions[ext]
-    require.extensions[ext] = noOp
+    require.extensions[ext] = handler
   }
 }
 

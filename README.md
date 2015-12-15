@@ -29,30 +29,50 @@ To use this with multiple Mocha requires:
 
 You can also use it just like `babel/register`:
 
-```javascript
-    import 'ignore-styles'
+```js
+  import 'ignore-styles'
 ```
 
 In ES5:
 
-```javascript
-    require('ignore-styles')
+```js
+require('ignore-styles')
 ```
 
 To customize the extensions used:
 
-```javascript
-    import register from 'ignore-styles'
-    register(['.sass', '.scss'])
+```js
+import register from 'ignore-styles'
+register(['.sass', '.scss'])
 ```
 
 To customize the extensions in ES5:
 
-```javascript
-    require('ignore-styles')(['.sass', '.scss'])
+```js
+require('ignore-styles')(['.sass', '.scss'])
 ```
 
-Enjoy!
+## Custom handler
+
+By default, a no-op handler is used that doesn't actually do anything. If you'd
+like to substitute your own custom handler to do fancy things, pass it as a
+second argument:
+
+```js
+import register from 'ignore-styles'
+register(undefined, () => {styleName: 'fake_class_name'})
+```
+
+Why is this useful? One example is when using something like
+[react-css-modules][react-css-modules]. You need the style imports to actually
+return something so that you can test the components, or the wrapper component
+will throw an error. Use this to provide test class names.
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Brainspace Corporation
 
 [travis-svg]: https://img.shields.io/travis/bkonkle/ignore-styles/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/bkonkle/ignore-styles
@@ -63,3 +83,4 @@ Enjoy!
 [version-svg]: https://img.shields.io/npm/v/ignore-styles.svg?style=flat-square
 [package-url]: https://npmjs.org/package/ignore-styles
 [default-extensions]: https://github.com/bkonkle/ignore-styles/blob/master/ignore-styles.js#L1
+[react-css-modules]: https://github.com/gajus/react-css-modules

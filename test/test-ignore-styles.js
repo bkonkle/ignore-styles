@@ -23,6 +23,12 @@ describe('ignore-styles', () => {
       expect(ignoreStyles.oldHandlers).to.have.property('.blargh', undefined)
     })
 
+    it('allows for a custom function to be provided instead of the no-op', () => {
+      const customHandler = () => ({'soup': 'No soup for you!'})
+      register(['.blargh'], customHandler)
+      expect(require.extensions['.blargh']).to.equal(customHandler)
+    })
+
   })
 
   describe('restore', () => {
