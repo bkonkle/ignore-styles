@@ -21,6 +21,10 @@ To resolve this, require `ignore-styles` with your mocha tests:
 See [DEFAULT_EXTENSIONS][default-extensions] for the full list of extensions
 ignored, and send a pull request if you need more.
 
+## Installation
+
+    $ npm install --save-dev ignore-styles
+
 ## More Examples
 
 To use this with multiple Mocha requires:
@@ -30,7 +34,7 @@ To use this with multiple Mocha requires:
 You can also use it just like `babel/register`:
 
 ```js
-  import 'ignore-styles'
+import 'ignore-styles'
 ```
 
 In ES5:
@@ -60,7 +64,7 @@ second argument:
 
 ```js
 import register from 'ignore-styles'
-register(undefined, () => {styleName: 'fake_class_name'})
+register(undefined, () => ({styleName: 'fake_class_name'}))
 ```
 
 Why is this useful? One example is when using something like
