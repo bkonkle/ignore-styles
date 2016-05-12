@@ -5,7 +5,11 @@ export const DEFAULT_EXTENSIONS = [
   '.stylus',
   '.styl',
   '.less',
-  '.png'
+  '.gif',
+  '.jpeg',
+  '.jpg',
+  '.png',
+  '.svg'
 ]
 
 export let oldHandlers = {}
