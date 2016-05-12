@@ -9,7 +9,7 @@ export const DEFAULT_EXTENSIONS = [
   '.jpeg',
   '.jpg',
   '.png',
-  '.svg'
+  '.svg',
 ]
 
 export let oldHandlers = {}

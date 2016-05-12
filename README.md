@@ -67,10 +67,28 @@ import register from 'ignore-styles'
 register(undefined, () => ({styleName: 'fake_class_name'}))
 ```
 
+The first argument to `register` is the list of extensions to handle. Leaving it
+undefined, as above, uses the default list. The handler function receives two arguments, `module` and `filename`, directly
+from Node.
+
 Why is this useful? One example is when using something like
 [react-css-modules][react-css-modules]. You need the style imports to actually
 return something so that you can test the components, or the wrapper component
 will throw an error. Use this to provide test class names.
+
+Another use case would be to simply return the filename of an image so that it
+can be verified in unit tests:
+
+```js
+register(undefined, (module, filename) => {
+  if (_.some(['.png', '.jpg'], ext => filename.endsWith(ext))) {
+    return path.basename(filename)
+  }
+})
+```
+
+If the filename ends in '.png' or '.jpg', then the basename of the file is
+returned as the value of the module on import.
 
 ## License
 
