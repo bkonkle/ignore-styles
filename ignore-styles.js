@@ -10,6 +10,9 @@ export const DEFAULT_EXTENSIONS = [
   '.jpg',
   '.png',
   '.svg',
+  '.mp4',
+  '.webm',
+  '.ogv'
 ]
 
 export let oldHandlers = {}
