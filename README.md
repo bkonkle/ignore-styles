@@ -1,6 +1,6 @@
 # ignore-styles
 
-[![Version][version-svg]][package-url] [![Build Status][travis-svg]][travis-url] [![License][license-image]][license-url] [![Downloads][downloads-image]][downloads-url]
+[![Version][version-svg]][package-url] [![Build Status][travis-svg]][travis-url] [![License][license-image]][license-url] [![Downloads][downloads-image]][downloads-url] [![Standard][standard-svg]][standard-url]
 
 A `babel/register` style hook to ignore style imports when running in Node. This
 is for projects that use something like Webpack to enable CSS imports in
@@ -104,5 +104,7 @@ Copyright (c) 2015 Brainspace Corporation
 [downloads-url]: http://npm-stat.com/charts.html?package=ignore-styles
 [version-svg]: https://img.shields.io/npm/v/ignore-styles.svg?style=flat-square
 [package-url]: https://npmjs.org/package/ignore-styles
+[standard-svg]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[standard-url]: http://standardjs.com/
 [default-extensions]: https://github.com/bkonkle/ignore-styles/blob/master/ignore-styles.js#L1
 [react-css-modules]: https://github.com/gajus/react-css-modules
