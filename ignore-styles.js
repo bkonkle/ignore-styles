@@ -18,9 +18,9 @@ export const DEFAULT_EXTENSIONS = [
 
 export let oldHandlers = {}
 
-export function noOp() {}
+export function noOp () {}
 
-export function restore() {
+export function restore () {
   for (const ext in oldHandlers) {
     if (oldHandlers[ext] === undefined) {
       delete require.extensions[ext]
@@ -32,7 +32,7 @@ export function restore() {
   oldHandlers = {}
 }
 
-export default function register(extensions = DEFAULT_EXTENSIONS, handler = noOp) {
+export default function register (extensions = DEFAULT_EXTENSIONS, handler = noOp) {
   restore()
 
   for (const ext of extensions) {
