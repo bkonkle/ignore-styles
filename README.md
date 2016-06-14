@@ -21,6 +21,8 @@ To resolve this, require `ignore-styles` with your mocha tests:
 See [DEFAULT_EXTENSIONS][default-extensions] for the full list of extensions
 ignored, and send a pull request if you need more.
 
+**Note:** This is not for use *inside* Webpack. If you want to ignore extensions in Webpack you'll want to use a loader like [ignore-loader]. This is for use in Node outside of your normal Webpack build.
+
 ## Installation
 
     $ npm install --save-dev ignore-styles
@@ -108,3 +110,4 @@ Copyright (c) 2015 Brainspace Corporation
 [standard-url]: http://standardjs.com/
 [default-extensions]: https://github.com/bkonkle/ignore-styles/blob/master/ignore-styles.js#L1
 [react-css-modules]: https://github.com/gajus/react-css-modules
+[ignore-loader]: https://www.npmjs.com/package/ignore-loader
