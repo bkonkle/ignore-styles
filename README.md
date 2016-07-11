@@ -55,7 +55,7 @@ register(['.sass', '.scss'])
 To customize the extensions in ES5:
 
 ```js
-require('ignore-styles')(['.sass', '.scss'])
+require('ignore-styles').register(['.sass', '.scss'])
 ```
 
 ## Custom handler
