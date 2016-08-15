@@ -82,9 +82,12 @@ Another use case would be to simply return the filename of an image so that it
 can be verified in unit tests:
 
 ```js
+const _ = require('lodash');
+const path = require('path');
+
 register(undefined, (module, filename) => {
   if (_.some(['.png', '.jpg'], ext => filename.endsWith(ext))) {
-    return path.basename(filename)
+    module.exports = path.basename(filename);
   }
 })
 ```
