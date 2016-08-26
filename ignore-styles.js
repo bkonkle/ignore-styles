@@ -6,6 +6,7 @@ export const DEFAULT_EXTENSIONS = [
   '.stylus',
   '.styl',
   '.less',
+  '.sss',
   '.gif',
   '.jpeg',
   '.jpg',
