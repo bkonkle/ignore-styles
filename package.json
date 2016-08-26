@@ -1,6 +1,6 @@
 {
   "name": "ignore-styles",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Ignore imported style files when running in Node",
   "main": "lib/ignore-styles.js",
   "scripts": {
