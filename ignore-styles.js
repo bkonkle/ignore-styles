@@ -14,7 +14,11 @@ export const DEFAULT_EXTENSIONS = [
   '.svg',
   '.mp4',
   '.webm',
-  '.ogv'
+  '.ogv',
+  '.aac',
+  '.mp3',
+  '.wav',
+  '.ogg'
 ]
 
 export let oldHandlers = {}
