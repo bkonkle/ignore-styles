@@ -37,8 +37,11 @@ export default function register (extensions = DEFAULT_EXTENSIONS, handler = noO
   restore()
 
   for (const ext of extensions) {
-    oldHandlers[ext] = require.extensions[ext]
-    require.extensions[ext] = handler
+    const oldHandler = require.extensions[ext]
+    oldHandlers[ext] = oldHandler
+    require.extensions[ext] = function (module, filename) {
+      return handler(module, filename, oldHandler)
+    }
   }
 }
 

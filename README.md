@@ -70,8 +70,8 @@ register(undefined, () => ({styleName: 'fake_class_name'}))
 ```
 
 The first argument to `register` is the list of extensions to handle. Leaving it
-undefined, as above, uses the default list. The handler function receives two arguments, `module` and `filename`, directly
-from Node.
+undefined, as above, uses the default list. The handler function receives three arguments, `module` and `filename`, directly
+from Node, and `oldHandler` which is the handler that was may be previously bound to the processed extension.
 
 Why is this useful? One example is when using something like
 [react-css-modules][react-css-modules]. You need the style imports to actually

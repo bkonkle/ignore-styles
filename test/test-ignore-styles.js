@@ -10,11 +10,7 @@ describe('ignore-styles', () => {
   describe('register()', () => {
     afterEach(() => {
       delete require.extensions['.blargh']
-    })
-
-    it('adds a no-op function as the handler for the given extensions', () => {
-      register(['.blargh'])
-      expect(require.extensions['.blargh']).to.equal(ignoreStyles.noOp)
+      delete ignoreStyles.oldHandlers['.blargh']
     })
 
     it('saves the old handler so that it can be restored later', () => {
@@ -25,7 +21,20 @@ describe('ignore-styles', () => {
     it('allows for a custom function to be provided instead of the no-op', () => {
       const customHandler = () => ({soup: 'No soup for you!'})
       register(['.blargh'], customHandler)
-      expect(require.extensions['.blargh']).to.equal(customHandler)
+      expect(require.extensions['.blargh']().soup).to.equal('No soup for you!')
+    })
+
+    it('provides the old handler to the new handler', () => {
+      const oldHandler = () => {}
+      require.extensions['.blargh'] = oldHandler
+
+      let receivedOldHandler = null
+      const newHandler = (module, filename, oldHandler) => {
+        receivedOldHandler = oldHandler
+      }
+      register(['.blargh'], newHandler)
+      require.extensions['.blargh']({}, 'foo')
+      expect(receivedOldHandler).to.equal(oldHandler)
     })
   })
 
@@ -39,7 +48,6 @@ describe('ignore-styles', () => {
       require.extensions['.fake'] = fakeHandler
 
       register(['.fake'])
-      expect(require.extensions['.fake']).to.equal(ignoreStyles.noOp)
 
       ignoreStyles.restore()
       expect(require.extensions['.fake']).to.equal(fakeHandler)
