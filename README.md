@@ -66,7 +66,7 @@ second argument:
 
 ```js
 import register from 'ignore-styles'
-register(undefined, () => ({styleName: 'fake_class_name'}))
+register(undefined, (module, filename) => (module.exports = {styleName: 'fake_class_name'}))
 ```
 
 The first argument to `register` is the list of extensions to handle. Leaving it
