@@ -66,7 +66,9 @@ second argument:
 
 ```js
 import register from 'ignore-styles'
-register(undefined, (module, filename) => (module.exports = {styleName: 'fake_class_name'}))
+register(undefined, (module, filename) => {
+  module.exports = {styleName: 'fake_class_name'}
+})
 ```
 
 The first argument to `register` is the list of extensions to handle. Leaving it
@@ -82,12 +84,12 @@ Another use case would be to simply return the filename of an image so that it
 can be verified in unit tests:
 
 ```js
-const _ = require('lodash');
-const path = require('path');
+const _ = require('lodash')
+const path = require('path')
 
 register(undefined, (module, filename) => {
   if (_.some(['.png', '.jpg'], ext => filename.endsWith(ext))) {
-    module.exports = path.basename(filename);
+    module.exports = path.basename(filename)
   }
 })
 ```
