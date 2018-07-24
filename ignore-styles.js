@@ -18,7 +18,8 @@ export const DEFAULT_EXTENSIONS = [
   '.aac',
   '.mp3',
   '.wav',
-  '.ogg'
+  '.ogg',
+  '.ico'
 ]
 
 export let oldHandlers = {}
